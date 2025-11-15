@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8">
     <title>Hello World</title>
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- iOS support -->
+    <link rel="apple-touch-icon" href="/icons/icon-192.png">
+
+    <!-- registrar service worker -->
+    <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js");
+      });
+    }
+    </script>
   </head>
   <body>
     <h1>Hello World no Netlify!</h1>
